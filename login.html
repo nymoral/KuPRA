@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KuPRA</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Head'eris -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">...</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">KuPRA</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">prisijungti</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <!-- Meniu -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="news.html">Naujienos</a></li>
+            <li><a href="recepies.html">Receptai</a></li>
+          </ul>
+        </div>
+        <!-- Meniu END -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <!-- CONTENT -->
+          <div class="container-fluid" id="login-container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Prisijungimas</div>
+                <div class="panel-body">
+                  <form class="form-horizontal">
+                    <div class="form-group" id="username_input">
+                      <label for="usernameInput" class="col-sm-4 control-label">Vartotojo vardas</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="usernameInput" placeholder="Vartotojo vardas">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-4 control-label">Slaptažodis</label>
+                      <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Slaptažodis">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-4">
+                        <button type="button" class="btn btn-default" onclick="doLogin()">Prisijungti</button>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-4">
+                        <a href="register.html">Registruotis</a>
+                      </div>
+                      <div class="col-sm-4">
+                        <a href="#">Pamiršau slaptažodį</a>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+                <div id="error-div" class="panel-footer" style="display: none;">
+                  <div class="alert alert-danger" role="alert">Tokio vartotojo nėra.</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    var errorShown = false;
+    window.doLogin = function() {
+      if (errorShown) {
+        openUrl('news.html');
+      }
+      errorShown = true;
+      $('#username_input').addClass('has-error');
+      $('#error-div').show();
+    }
+    </script>
+  </body>
+</html>
