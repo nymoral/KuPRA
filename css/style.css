@@ -107,3 +107,7 @@ body {
 #login-container {
   max-width: 600px;
 }
+
+.required_star {
+  color: #D32F2F;
+}

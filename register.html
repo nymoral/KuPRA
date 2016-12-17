@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KuPRA</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Head'eris -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">...</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">KuPRA</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">prisijungti</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <!-- Meniu -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="news.html">Naujienos</a></li>
+            <li><a href="recepies.html">Receptai</a></li>
+          </ul>
+        </div>
+        <!-- Meniu END -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <!-- CONTENT -->
+          <div class="container-fluid" id="login-container">
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                 <p>Registracija</p>
+                 <div id="error-div" style="display: none;">
+                  <div class="alert alert-danger" role="alert">Būtina įvesti slapyvardį.</div>
+                  <div class="alert alert-danger" role="alert">Slaptažodis turi būti bent 8 simbolių ilgio.</div>
+                </div>
+
+              </div>
+
+                <div class="panel-body">
+                  <form class="form-horizontal">
+                    <div class="form-group error_input">
+                      <label for="usernameInput" class="col-sm-4 control-label">Slapyvardis <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="usernameInput" placeholder="Slapyvardis">
+                      </div>
+                    </div>
+                    <div class="form-group error_input">
+                      <label for="inputPassword3" class="col-sm-4 control-label">Slaptažodis <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Slaptažodis">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword4" class="col-sm-4 control-label">Pakartoti slaptažodį <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Pakartoti slaptažodį">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="email_input" class="col-sm-4 control-label">El. paštas <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email_input" placeholder="El. paštas" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-6">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" checked="checked">Viešas el. pašto adresas
+                        </label>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name_input" class="col-sm-4 control-label">Vardas</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name_input" placeholder="Vardas">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="lastname_input" class="col-sm-4 control-label">Pavardė</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="lastname_input" placeholder="Pavardė">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="birthYear_input" class="col-sm-4 control-label">Gimimo metai</label>
+                      <div class="col-sm-6">
+                        <input type="number" class="form-control" id="birthYear_input" placeholder="" style="max-width: 100px;">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="city_input" class="col-sm-4 control-label">Miestas</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="city_input" placeholder="Miestas">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="about_input" class="col-sm-4 control-label">Apie mane</label>
+                      <div class="col-sm-6">
+                        <textarea class="form-control" id="about_input"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-6">
+                      <label class="btn btn-default btn-file">
+                        Nuotrauka<input type="file" style="display: none;">
+
+                    </label>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-4">
+                        <button type="button" class="btn btn-default" onclick="doRegister()">Registruotis</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    var errorShown = false;
+    window.doRegister = function() {
+      if (errorShown) {
+        openUrl('news.html');
+      }
+      errorShown = true;
+      $('.error_input').addClass('has-error');
+      $('#error-div').show();
+    }
+    </script>
+  </body>
+</html>
