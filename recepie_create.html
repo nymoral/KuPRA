@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KuPRA</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Head'eris -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">...</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">KuPRA</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">prisijungti</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <!-- Meniu -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="news.html">Naujienos</a></li>
+            <li class="active"><a href="recepies.html">Receptai <span class="sr-only">(current)</span></a></li>
+            <li><a href="products.html">Produktai</a></li>
+            <li><a href="fridge.html">Šaldytuvas</a></li>
+            <li><a href="menu.html">Valgiaraštis</a></li>
+          </ul>
+        </div>
+        <!-- Meniu END -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <!-- CONTENT -->
+          <div class="container-fluid" id="login-container">
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                 <p>Naujas receptas</p>
+                 <div id="error-div" style="display: none;">
+                  <div class="alert alert-danger" role="alert">Toks receptas jau egzistuoja</div>
+                </div>
+              </div>
+
+                <div class="panel-body">
+
+                  <form class="form-horizontal">
+                    <div class="form-group error_input">
+                      <label for="usernameInput" class="col-sm-4 control-label">Pavadinimas <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="usernameInput" placeholder="Pavadinimas">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-4 control-label">Porcijų skaičius <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="number" class="form-control" id="inputPassword3" min="0" style="max-width: 80px;">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-4 control-label">Gamybos trukmė (min). <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <div class="col-sm-6">
+                        <input type="number" class="form-control" id="inputPassword3" min="0" style="max-width: 80px;">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-6">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" checked="checked">Viešas
+                        </label>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword5" class="col-sm-4 control-label">Instrukcija <a class="required_star" title="Būtinas laukas">*</a></label>
+                      <textarea style="width: 300px; height: 200px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-4 col-sm-6">
+                      <label class="btn btn-default btn-file">
+                        Pridėti nuotrauką<input type="file" style="display: none;">
+                    </label>
+                    </div>
+                    </div>
+
+                    <div class="well row">
+                      <h4>Produktai:</h4>
+                      <div class="form-group">
+                        <label for="inputPassword5" class="col-sm-4 control-label">Produktas <a class="required_star" title="Būtinas laukas">*</a></label>
+                        <select class="form-control" style="max-width: 160px;">
+                          <option>Vištienos file</option>
+                          <option>Vanduo</option>
+                          <option>Kvietiniai miltai</option>
+                          <option>Sūris</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword5" class="col-sm-4 control-label">Kiekis <a class="required_star" title="Būtinas laukas">*</a></label>
+                        <input type="number" class="form-control" id="inputPassword3" min="0" style="max-width: 80px;">
+                      </div>
+                      <button type="button" class="btn btn-success" onclick="">Pridėti</button>
+
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-6">
+                        <button type="button" class="btn btn-primary btn-lg active" onclick="doCreate()">Išsaugoti</button>
+                        <button type="button" class="btn btn-default btn-lg active" onclick="openUrl('recepies.html')">Grįžti</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      var error_shown = false;
+      window.doCreate = function() {
+        if (error_shown) {
+          openUrl('recepies_success.html');
+        }
+        error_shown = true;
+        $('.error_input').addClass('has-error');
+        $('#error-div').show();
+
+      }
+    </script>
+  </body>
+</html>
