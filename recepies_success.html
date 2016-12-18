@@ -39,9 +39,9 @@
         <!-- Meniu -->
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="news.html">Naujienos </a></li>
-            <li><a href="recepies.html">Receptai</a></li>
-            <li class="active"><a href="products.html">Produktai<span class="sr-only">(current)</span></a></li>
+            <li><a href="news.html">Naujienos</a></li>
+            <li class="active"><a href="recepies.html">Receptai <span class="sr-only">(current)</span></a></li>
+            <li><a href="products.html">Produktai</a></li>
             <li><a href="fridge.html">Šaldytuvas</a></li>
             <li><a href="menu.html">Valgiaraštis</a></li>
           </ul>
@@ -49,11 +49,12 @@
         <!-- Meniu END -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <!-- CONTENT -->
-          <h1 class="page-header">Produktai</h1>
+          <h1 class="page-header">Receptai</h1>
           <div class="container-fluid">
+            <div class="alert alert-success" role="alert">Sėkmingai sukurtas receptas</div>
             <div class="row">
               <div class="col-md-2">
-                <button type="button" onclick="openUrl('product_create.html')">Naujas produktas</button>
+                <button type="button" onclick="openUrl('recepie_create.html')">Naujas receptas</button>
               </div>
 
               <div class="col-md-4">
@@ -61,40 +62,49 @@
                   <input type="text" placeholder="Paieška">
                 </form>
               </div>
+              <div class="col-md-2">
+                <a href="detailed_search.html">Detali paieška</a>
+              </div>
             </div>
             <div class="row">
               <table class="table">
                 <thead>
+                  <th>Kulinaras</th>
                   <th>Pavadinimas</th>
-                  <th>Matavimo vienetas</th>
-                  <th>Aprašymas</th>
+                  <th>Įvertinimas</th>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a href="product_view.html">Jautienos faršas</a></td>
-                    <td>gramai</td>
-                    <td>Liesas jautienos faršas</td>
+                    <td><a href="profile_view.html">Hanibalas</a></td>
+                    <td><a href="recepie_view.html">Jautienos didkepsnis</a></td>
+                    <td>8.0</td>
                   </tr>
                   <tr>
-                    <td><a href="product_view.html">Pienas</a></td>
-                    <td>mililitrai</td>
+                    <td><a href="profile_view.html">Marytė</a></td>
+                    <td><a href="recepie_view.html">Cezario salotos</a></td>
                     <td>-</td>
                   </tr>
                   <tr>
-                    <td><a href="product_view.html">Iceberg salotos</a></td>
-                    <td>vienetai</td>
-                    <td>-</td>
+                    <td><a href="profile_view.html">420_no_scope</a></td>
+                    <td><a href="recepie_view.html">Makaronai su sūriu</a></td>
+                    <td>10.0</td>
                   </tr>
                   <tr>
-                    <td><a href="product_view.html">Makaronai</a></td>
-                    <td>gramai</td>
-                    <td>-</td>
+                    <td><a href="profile_view.html">hunter2</a></td>
+                    <td><a href="recepie_view.html">Krevečių salotos</a></td>
+                    <td>4.7</td>
+                  </tr>
+                  <tr>
+                    <td><a href="profile_view.html">vegan_42</a></td>
+                    <td><a href="recepie_view.html">Moliūginis keksas</a></td>
+                    <td>7.3</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
           </div>
+
+
         </div>
       </div>
     </div>
