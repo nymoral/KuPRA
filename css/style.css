@@ -111,3 +111,11 @@ body {
 .required_star {
   color: #D32F2F;
 }
+
+.comment {
+  max-width: 400px;
+}
+
+.reply_link {
+  font-size: small;
+}
